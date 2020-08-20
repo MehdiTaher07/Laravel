@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>rankings</title>
+	</head>
+	
+	
+	<body >
+
+		<h1>Populate table with AJAX</h1>
+		<p>The following table will be filled with AJAX!
+			onload="loadRankings()"
+		</p>
+		
+		<table id="ranking">
+			<thead>
+				<tr>
+					<th>Ranking</th>
+					<th>Full Name</th>
+					<th>Points</th>
+				</tr>	
+			</thead>	
+			<tbody>	
+				<!--tr>
+					<td>1</td>
+					<td>Mehdi</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Mehdi</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Mehdi</td>
+					<td>10</td>
+				</tr-->	
+			</tbody>	
+		</table>
+	</body>
+	
+	<style>
+	</style>
+	
+	<script>
+		const rankingsBody=document.querySelector("#ranking > tbody");
+		//console.log(rankingBody);
+		function loadRankings()
+		{
+			//only by server
+			const request = new XMLHttpRequest();
+			
+			request.open('get','ranks.json');
+			
+			request.onload=()=>{
+				try{
+				const json=JSON.parse(request.responseText);
+					populateRankings(json);
+				}catch(e){
+					console.warn("could not load rankings! := "+e);
+				}
+			};
+			request.send();
+		}
+		
+		function populateRankings(json)
+		{
+			//console.log(json);
+			/*if(rankingsBody.firstChild)
+			{
+				rankingsBody.removeChild(rankingsBody,firstChild);
+			}*/
+			//populate table
+			json.forEach(function(r){
+				const tr=document.createElement('tr');
+				r.forEach(function(c) { // was missing a )
+				  //console.log(c);
+				  const td=document.createElement('td');
+				  td.textContent=c;
+				  tr.append(td);
+				});
+				rankingsBody.append(tr);
+			});
+			
+		}
+		/*//document.addEventListener("DOMContentLoaded",()=>{});
+		document.addEventListener('DOMContentLoaded', () => {
+		loadRankings();
+		});
+		window.onload=(){
+		loadRankings();
+		};
+		window.onload = () => {
+		loadRankings();
+		};*/
+		//https://www.youtube.com/watch?v=W6NsAO08vmE&list=PLVvjrrRCBy2IeK_wtxbxtwg89KWVNn2Sa&index=57
+		 loadRankings();
+	</script>
+	
+</html>
