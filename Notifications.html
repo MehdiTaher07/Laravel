@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>notification system</title>
+	</head>
+	
+	
+	<body>
+		<h1>Alert Message</h1>
+		<p>Click on the "x" to close the alert message!</p>
+		<div>
+			cliiiiiiiiiiick 1
+			<span class="closebtn">&times;</span>
+		</div>
+		<div>
+			cliiiiiiiiiiick 2
+			<span class="closebtn">&times;</span>
+		</div>
+		<div>
+			cliiiiiiiiiiick 3
+			<span class="closebtn">&times;</span>
+		</div>
+		<div>
+			cliiiiiiiiiiick 4
+			<span class="closebtn">&times;</span>
+		</div>
+	</body>
+	
+	<style>
+		div{
+			padding: 20px;
+			background-color:yellow;
+			margin-bottom:10px;
+			width:500px;
+			transition: opacity 0.6s;
+		}
+		.closebtn{
+			//background-color:red;
+			cursor:pointer;
+			font-size:25px;
+			color:red;
+			font-weight:bold;
+			float:right;
+		}
+	</style>
+	
+	<script>
+		//var closes=document.getElementsByClassName('closebtn');
+		//=document.querySelectorAll('closebtn');
+		/** 
+			*getElementsByClassName and getElementsByTagName 
+			 both return HTMLCollections.
+			*querySelectorAll and getElementsByName 
+			 both return NodeLists.
+			*querySelector and getElementById 
+			 both return a single element.
+		**/
+		var closes=document.getElementsByClassName('closebtn');
+		for(let i=0;i<closes.length;i++)
+		{
+			closes[i].onclick=function()
+			{
+				//alert('dlaal');
+				
+				var a=this.parentElement;
+				a.style.opacity="0";
+				setTimeout(function(){
+				a.style.display='none';
+				},600);
+			}
+		}
+	</script>
+	
+</html>

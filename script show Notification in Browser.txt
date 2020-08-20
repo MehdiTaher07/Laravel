@@ -1,0 +1,17 @@
+
+		function showNotifications()
+		{
+			const notification=new Notification("New Message from Mido!",{
+			body:"Hey Man How Are you!"
+			});
+			notification.onclick=(e)=> window.location.href='https://google.com';
+		}
+		setTimeout(function(){
+				//code here after 10min execute
+				},10000);
+
+
+		Notification.requestPermission().then(permission=>{
+			if(permission=='granted')
+			showNotifications();
+		});
