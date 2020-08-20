@@ -7,7 +7,7 @@
 			notification.onclick=(e)=> window.location.href='https://google.com';
 		}
 		setTimeout(function(){
-				//code here after 10min execute
+				//code here after 10sec execute
 				},10000);
 
 
