@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css"/>
+</head>
+	<body>
+		
+	</body>
+	<script>
+		const numbers=[1,-1,2,3];
+		let sum=0;
+		for(let n of numbers)
+			sum+=n;
+		alert(sum);
+		
+		let sum1=numbers.reduce(
+		(accumlator,currentValue)=> accumlator+currentValue
+		,10);
+		alert(sum1);
+	</script>
+
+</html>
