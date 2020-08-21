@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css"/>
+</head>
+	<body>
+		Hello how are you
+		<button id="btnlog"
+		onclick="document.getElementById('modal').style.display='block'">
+			Show Model
+		</button>
+		<div id="modal">
+			<form action="#" method="post" class='form move'>
+				<div class="img">
+					<span class='close' onclick="document.getElementById('modal').style.display='none'">x</span>
+					<img src="avatar.jpg" class="avatar" />
+				</div>
+				<div class="container">
+					UserName<input type="text" id="user" required/>
+					Password<input type="password" id="pass" required/>
+					<button type="submit">Send</button>
+				</div>
+			</form>
+		</div>
+	</body>
+	
+
+</html>
