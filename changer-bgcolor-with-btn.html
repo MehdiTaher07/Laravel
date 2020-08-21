@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+	<body id="b">
+		<input type="button" value="changer" onclick="go()"/>
+	</body>
+	<script>
+			function go(){
+				var a,b,c;
+				a=Math.floor(Math.random()*256);
+				b=Math.floor(Math.random()*256);
+				c=Math.floor(Math.random()*256);
+				document.getElementById('b').style.backgroundColor="rgb("+a+','+b+','+c+')';
+			}
+	</script>
+	
+	<style>
+		.blueBox{
+			background:#00F;
+			color:#FFF;
+			height:100px;
+		}
+		.yellowBox{
+			background:yellow;
+			color:#F00;
+			height:100px;
+		}
+		.redBox{
+			background:#F00;
+			color:#000;
+			height:100px;
+		}
+	</style>
+</html>
