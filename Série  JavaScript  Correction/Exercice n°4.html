@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Moyenne</title></head>
+		<body>
+		<FORM name="f">
+		<INPUT type="text" id="nb" size="4">
+		<INPUT type="button" value="Calculer le carré" onclick="carré()">
+		</FORM>
+		
+		<script>
+		/*Ecrire le code d'un fichier HTML 
+		permettant de calculer et d'afficher 
+		le carré d'un nombre saisi au clavier.*/
+			function carré()
+			{
+				var c=document.f.nb.value*document.f.nb.value;
+				alert("Le carré de "+document.f.nb.value+" est " +c); 
+			}
+		</script>
+		</body>
+</html>

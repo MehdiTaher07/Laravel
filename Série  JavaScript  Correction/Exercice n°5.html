@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Moyenne</title></head>
+		<body>
+		<form name="f">
+			<input type="text" name="zt1">
+			<input type="button" value=" = " onclick="resultat()">
+			<input type="text" name="zt2"><br>
+			<a href="#" onclick="resultat()">voir</a>
+		</form>
+		<script>
+		/*Ecrire le code d'un document HTML,
+		intitulé Calcul,
+		contenant une zone de saisie qui permet d'entrer
+		une opération à calculer, un bouton (=) pour afficher
+		le résultat et une zone de réponse.
+		Ajouter un lien hypertexte permettant
+		d’afficher le résultat.*/
+			function resultat()
+			{
+			 var a=document.f.zt1.value;
+			 var b=eval(a);
+			 document.f.zt2.value=b; 
+			}
+		</script>
+		</body>
+</html>
