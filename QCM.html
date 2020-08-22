@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8"/>
+	<title>QCM</title>
+	<style>
+		
+		body{
+			margin-right:10px;
+			margin-right:10px;
+			padding: 0px; 	
+		}
+		fieldset{
+			border: 2px solid Lightgreen; 
+			margin: auto; 
+			width: 50%; 
+			text-align: center;
+		}
+		legend{
+			color: red;
+		}
+		a:hover{
+			color: red;
+		}
+	</style>
+	</head>
+	<body>
+		<h1>QCM chronométré</h1>
+		<br>
+		<hr>
+		<p>Vous avez 5 seconds...</p>
+		<form>
+			<fieldset>
+				<legend>Quelle est la mesure...</legend>
+				<input type="radio" name="choix" value="30°" onclick="choose(this)">30°
+				<input type="radio" name="choix" value="45°" onclick="choose(this)">45°
+				<input type="radio" name="choix" value="60°" onclick="choose(this)">60°
+				<input type="radio" name="choix" value="75°" onclick="choose(this)">75°
+				<input type="radio" name="choix" value="90°" onclick="choose(this)">90°
+			</fieldset>
+		</form>
+		<hr>
+		<a href="QCM.html">Rcommencer</a>
+		<script language="javascript">
+			var couldAnswer = true;
+			var idTimer = setTimeout(timeout, 5000);
+			function timeout(){
+				couldAnswer = false;
+				alert("il faut être plus rapid!");
+				clearInterval(idTimer);
+			}
+			function choose(obj){
+				if(!couldAnswer) return;
+				var answer = obj.value;
+				if(answer=="60°"){ 
+					alert("Bonne réponse ;)");
+					couldAnswer = false;
+					clearInterval(idTimer);
+				}
+				else alert('Erreur!');
+			}
+		</script>
+	</body>
+</html>
