@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>rankings</title>
+	</head>
+	
+	
+	<body onload='doVirus()'>
+		<nav><ul>
+			<li><a href="Home.html">Home</a></li>
+			<li><a href="About.html">About us</a></li>
+			<li><a href="Contact.html">Contact</a></li>
+		</ul></nav>
+	</body>
+	
+	<style>
+	</style>
+	
+	<script>
+			/*Ecrire la fonction virus() qui va procéder à une permutation circulaire des url des liens contenus
+			sur la page en cours.*/
+			function virus()
+			{
+				var liens=document.getElementsByTagName('a');	
+				for(var i=0;i<liens.length-1;i++)
+				{
+					//window.location.href=liens[i].href;
+					var temp=liens[i+1].href;
+					liens[i+1].href=liens[i].href;
+					liens[i].href=temp;
+				}
+			}
+		/*Cette fonction est déclenchée automatiquement toutes les 20 secondes, 
+		dès le chargement de la page*/
+		//setInterval(virus,20000);
+		function doVirus()
+		{
+			virus();
+			setTimeout(doVirus,1000);
+		}
+	</script>
+	
+</html>
