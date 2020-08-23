@@ -27,23 +27,31 @@ BTW, I made the video to get "EASIEST WAY POSSIBLE", means read the video title,
 	</tr>
 </table>
 <script type="text/javascript">
- function loadDoc() {
+ function loadDoc()
+	{
   
 
-  setInterval(function(){
+		  setInterval(function()
+		  {
+			   var xhttp = new XMLHttpRequest();
 
-   var xhttp = new XMLHttpRequest();
-   xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("noti_number").innerHTML = this.responseText;
-    }
-   };
-   xhttp.open("GET", "index.php", true);
-   xhttp.send();
-
-  },1000);
-
-
- }
+			   xhttp.onreadystatechange = function() {
+			    if (this.readyState == 4 && this.status == 200) {
+			     document.getElementById("noti_number").innerHTML = this.responseText;
+			    }
+			   };
+			   xhttp.open("GET", "index.php", true);
+			   xhttp.send();
+		  },1000);
+ 	}
  loadDoc();
 </script>
+<style>
+#noti_number{
+	color:white;
+	background-color:red;
+	border-radius:25px;
+	padding:5px;
+	height:11px;
+}
+</style>
