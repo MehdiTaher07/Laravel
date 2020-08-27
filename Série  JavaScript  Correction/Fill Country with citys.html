@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8"/>
+	<title>Countries</title>
+	<style>
+	</style>
+	</head>
+	
+	<body>
+		<select id="country" onchange="cities()">
+			<option>
+				Select Country
+			</option>
+			<option>
+				Morocco
+			</option>
+			<option>
+				USA
+			</option>
+			<option>
+				France
+			</option>
+		</select>
+		</br>
+		<select id="cities">
+			<option>
+				Select City
+			</option>
+		</select>
+		
+	</body>
+	
+	<script>
+		function cities()
+		{
+//			alert('working');
+			var country=document.getElementById('country').value;
+			
+			var cities=[];
+			if(country=="Morocco")
+			{
+				cities=['Rabat','Oujda','Kenitra','Agadir'];
+			}else if(country=="USA")
+			{
+				cities=['New York','Los Angeles','Houston','Phoenix'];
+			}else if(country=="France")
+			{
+				cities=['Bordeaux','Strasbourg','Montpellier'];
+			}
+			var citiesOptions="";
+			for(let i=0;i<cities.length;i++)
+			{
+				citiesOptions+="<option>"+cities[i]+"</option>";
+			}
+			document.getElementById('cities').innerHTML=citiesOptions;
+		}
+	</script>
+</html>
