@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8"/>
+	<title>Sport</title>
+	<style>
+	::selection{background:#000;color:#FFF}
+	</style>
+	</head>
+	
+	<body>
+		<select id="sports" onchange="getSports()">
+			<option>
+				Select Country
+			</option>
+			<option>
+				Rugby
+			</option>
+			<option>
+				Football
+			</option>
+		</select>
+		</br>
+		<div id="sport"></div>
+		</br>
+		<hr/>
+		</br>
+		
+		<input type="text" id="txtSport" />
+		<input type="button" onclick="addSport()" value="add Sport" />
+	</body>
+	
+	<script>
+		function getSports()
+		{
+			
+			var sports=document.getElementById('sports');
+			//alert(sports.options[sports.selectedIndex].text);
+			//sports.options.length;
+			var sport=sports.options[sports.selectedIndex].text
+			document.getElementById('sport').innerHTML=sport;	
+		}
+		function addSport()
+		{
+			var sports=document.getElementById('sports'),
+				
+				txtSport=document.getElementById('txtSport').value,
+				
+				newSport=document.createElement('option'),
+				newSportName=document.createTextNode(txtSport);
+				newSport.appendChild(newSportName);
+				
+				sports.insertBefore(newSport,sports.lastChildNode);
+				
+				
+				
+				
+			
+		}
+	</script>
+</html>
