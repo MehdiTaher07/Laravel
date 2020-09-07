@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<body>
+			<ul>
+				<li><a href="#" id="h">Accueil</a></li>
+				<li><a href="#" id="p">Profil</a></li>
+				<li><a href="#" id="c">Contact</a></li>
+				<li><a href="#" id="l">Langage</a>
+					<ul>
+						<li><a href="#fr" class="lang" id="fr">Francais</a></li>
+						<li><a href="#ang" class="lang" id="eng">Anglais</a></li>
+						<li><a href="#ar" class="lang" id="ar">Arabe</a></li>
+					</ul>	
+				</li>
+			</ul>
+			<br/><br/><br/>
+			<div id="content">
+				Page d'Accueil<br/>
+				Bienvenue sur le Site Multilingue Arabe, Francais, Anglais<br/>
+				Site Multilingue Arabe, Francais, Anglais<br/>
+			</div>
+	</body>
+	<style>
+		ul{
+			padding:0;
+			margin:0;
+			list-style:none;
+		}
+		ul li{
+			float:left;
+			width:200px;
+			height:40px;
+			background-color:rgb(0, 32, 128);
+			text-align:center;
+			line-height:40px;
+		}
+		
+		ul li a{
+			color:white;
+			text-decoration:none;
+		}
+		ul li:hover{
+			background-color:rgb(0, 38, 153);
+			display:block;
+		}
+		ul li ul li{
+			display:none;
+		}
+		ul li:hover ul li{
+			display:block;
+		}
+		
+		
+		#content{
+			margin-left:30px;
+			font-weight:bold;
+			font-size:20px;
+		}
+	</style>
+	<script>
+	var lang={
+				eng:{
+					Home:'Home',
+					Profile:'Profile',
+					Contact:'Contact',
+					Language:'Language',
+					content:`Home Page <br/>
+							Welcome to the Multilingual Arabic, French, English Site <br/>
+							Multilingual Arabic, French, English site <br/>`,
+							ln:{
+								fr:'French',
+								eng:'English',
+								ar:'Arabic'
+							}
+				},
+				fr:{
+					Home:'Accueil',
+					Profile:'Profil',
+					Contact:'Contact',
+					Language:'Langue',
+					content:`Page d'Accueil<br/>
+				Bienvenue sur le Site Multilingue Arabe, Francais, Anglais<br/>
+				Site Multilingue Arabe, Francais, Anglais<br/>`,
+							ln:{
+								fr:'Francais',
+								eng:'Anglais',
+								ar:'Arabe'
+							}
+				},
+				ar:{
+					Home:'الصفحة الرئيسية',
+					Profile:'الملف الشخصي',
+					Contact:'اتصل بنا',
+					Language:'لغة',
+					content:`الصفحة الرئيسية <br/>
+						مرحبًا بكم في الموقع متعدد اللغات بالعربية والفرنسية والإنجليزية <br/>
+						موقع متعدد اللغات بالعربية والفرنسية والإنجليزية <br/>`,
+							ln:{
+								fr:'فرنسية',
+								eng:'لإنجليزية',
+								ar:'عربية'
+							}
+				}
+		};
+		var h=document.getElementById('h');
+		var p=document.getElementById('p');
+		var c=document.getElementById('c');
+		var l=document.getElementById('l');
+		var cont=document.getElementById('content');
+		var f=document.getElementById('fr');
+		var e=document.getElementById('eng');
+		var a=document.getElementById('ar');
+		
+		
+		function changeLang(l){
+			alert(lang.l.Home)
+		}
+		var langs=document.querySelectorAll(".lang");
+		langs.forEach(el=>{
+			el.addEventListener('click',()=>{
+				var idLang=el.id;
+				var ho=`lang['${idLang}'].Home`;
+				var pro=`lang['${idLang}'].Profile`;
+				var con=`lang['${idLang}'].Contact`;
+				var la=`lang['${idLang}'].Language`;
+				var content=`lang['${idLang}'].content`;
+				var fra=`lang['${idLang}'].ln.fr`;
+				var engl=`lang['${idLang}'].ln.eng`;
+				var arab=`lang['${idLang}'].ln.ar`;
+				
+				h.innerHTML=eval(ho);
+				p.innerHTML=eval(pro);
+				c.innerHTML=eval(con);
+				l.innerHTML=eval(la);
+				cont.innerHTML=eval(content);
+				f.innerHTML=eval(fra);
+				e.innerHTML=eval(engl);
+				a.innerHTML=eval(arab);
+			});
+		});
+	</script>
+</html>
